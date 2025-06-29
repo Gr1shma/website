@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+    --color-black: #111;
+    --color-white: #d1d5db;
+    --color-orange: #fc8f4c;
+    --color-foreground: var(--color-black);
+    --color-background: var(--color-white);
+    --color-accent: var(--color-orange);
+    --animate-fade-in-down: fade-in-down 0.5s ease-out;
+    --animate-fade-in: fade-in 0.2s ease-out;
+
+    @keyframes fade-in-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+:root {
+    @variant dark {
+        --color-foreground: var(--color-white);
+        --color-background: var(--color-black);
+        --color-accent: var(--color-orange);
+    }
+}
