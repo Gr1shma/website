@@ -1,0 +1,39 @@
+---
+export interface Props {
+    posts: {
+        slug: string;
+        data: {
+            title: string;
+            date: Date;
+        };
+    }[];
+}
+
+const { posts } = Astro.props;
+---
+
+<div class="space-y-8 pt-4 sm:space-y-4">
+    {
+        posts.map((post) => (
+            <div class="group flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <a
+                    href={`/blog/${post.slug}`}
+                    class="hover:text-accent text-gray-200 transition-colors duration-200"
+                >
+                    {post.data.title.toLowerCase()}
+                </a>
+                <div class="flex shrink-0 items-center text-sm text-gray-400">
+                    <span>
+                        {new Date(post.data.date)
+                            .toLocaleDateString("en-US", {
+                                month: "short",
+                                day: "numeric",
+                                year: "numeric",
+                            })
+                            .toLowerCase()}
+                    </span>
+                </div>
+            </div>
+        ))
+    }
+</div>
