@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/layout.astro";
+
+const postModules = import.meta.glob("../../content/posts/*.md");
+
+const posts = await Promise.all(
+    Object.entries(postModules).map(async ([file, resolver]) => {
+        const mod = (await resolver()) as {
+            frontmatter: {
+                title: string;
+                date: string;
+                hidden?: boolean;
+                [key: string]: any;
+            };
+        };
+        return {
+            frontmatter: mod.frontmatter,
+            slug: file.split("/").pop().replace(".md", ""),
+        };
+    }),
+);
+
+const sortedPosts = posts
+    .sort(
+        (a, b) =>
+            new Date(b.frontmatter.date).valueOf() -
+            new Date(a.frontmatter.date).valueOf(),
+    )
+    .filter((p) => p.frontmatter.hidden !== true);
+---
+
+<Layout title="Grishma Dhakal - Blog">
+    <h1 class="mb-4 text-4xl font-bold">
+        <span class="text-accent"> ~ </span>
+        <span class="inline-block text-[#ffffff]">blog</span>
+    </h1>
+    <div class="space-y-8 pt-4 sm:space-y-4">
+        {
+            sortedPosts.map((post) => (
+                <div class="group flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <a
+                        href={`/blog/${post.slug}`}
+                        class="hover:text-accent text-gray-200 transition-colors duration-200"
+                    >
+                        {post.frontmatter.title.toLowerCase()}
+                    </a>
+                    <div class="flex shrink-0 items-center text-sm text-gray-400">
+                        <span>
+                            {new Date(post.frontmatter.date)
+                                .toLocaleDateString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                })
+                                .toLowerCase()}
+                        </span>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</Layout>

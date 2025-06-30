@@ -212,7 +212,7 @@ export const favorites = [
         ],
     },
     {
-        title: "hobbies / games",
+        title: "games i play/played",
         description: "Stuff that eats my weekend. Worth it.",
         items: [
             {
@@ -244,6 +244,21 @@ export const favorites = [
                 name: "Days Gone – Broken Road DLC",
                 url: "https://store.steampowered.com/app/3238470/Days_Gone__Broken_Road_DLC/",
                 note: "Ride, scavenge, survive. Post-apocalyptic biker life with chaos on wheels.",
+            },
+            {
+                name: "God of War (2018)",
+                url: "https://store.steampowered.com/app/1593500/God_of_War/",
+                note: "dad game? yes. axe recall is pure dopamine. every swing feels heavy and earned.",
+            },
+            {
+                name: "God of War: Ragnarök",
+                url: "https://store.steampowered.com/app/2344520/God_of_War_Ragnark/",
+                note: "rage, regret, and realm-tearing combat. kratos delivers again, bigger and meaner.",
+            },
+            {
+                name: "Uncharted: Legacy of Thieves Collection",
+                url: "https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/",
+                note: "climbing, chaos, and cinematic chases. drake never misses — this is linear done right.",
             },
             {
                 name: "Clash of Clans",
