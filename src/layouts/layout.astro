@@ -1,9 +1,10 @@
 ---
 import "../style/global.css";
 import Navbar from "../components/navbar.astro";
+import { Font } from "astro:assets";
 ---
 
-<!doctype html>
+
 <html
     lang="en"
     class="h-full bg-white dark:bg-black"
@@ -16,6 +17,7 @@ import Navbar from "../components/navbar.astro";
         <title>Grishma Dhakal</title>
     </head>
     <body>
+        <Font cssVariable="--font-geist-mono" preload />
         <div class="text-foreground mx-auto max-w-4xl px-4 py-8">
             <Navbar />
             <slot />

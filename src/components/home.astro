@@ -1,5 +1,37 @@
 ---
 import Header from "../components/header.astro";
+import SectionList from "../components/section-list.astro";
+
+const projectItems = [
+    {
+        title: "g7-chat",
+        role: "creator",
+        description:
+            "a fast, minimalist ai chat interface built with full-stack next.js — for power users who value speed, control, and complete ownership.",
+        href: "https://g7-chat.vercel.app",
+    },
+    {
+        title: "tube and fuss",
+        role: "creator",
+        description:
+            "a backend system in express.js combining features of youtube and twitter.",
+        href: "https://github.com/Gr1shma/tube-and-fuss",
+    },
+    {
+        title: "go-rssag",
+        role: "creator",
+        description:
+            "a lightweight rss aggregator in go with user accounts, feed follows, and a background scraper.",
+        href: "https://github.com/Gr1shma/go-rrsag",
+    },
+
+];
 ---
 
 <Header />
+<SectionList
+    title="projects"
+    items={projectItems}
+    viewAllHref="/projects"
+    viewAllText="all projects"
+/>

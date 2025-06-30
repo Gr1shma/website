@@ -1,0 +1,72 @@
+---
+interface Item {
+    title: string;
+    href: string;
+    role: string;
+    period?: string;
+    description: string;
+}
+
+interface SectionListProps {
+    title: string;
+    items: Item[];
+    viewAllHref?: string;
+    viewAllText?: string;
+}
+
+const { title, items, viewAllHref, viewAllText } =
+    Astro.props as SectionListProps;
+---
+
+<section class="animate-fade-in-up mb-16">
+    <h2 class="mb-6 flex items-center text-2xl font-bold text-white">
+        <span class="text-accent mr-2">*</span>
+        {title}
+    </h2>
+    <div class="space-y-8">
+        {
+            items.map((item) => (
+                <div class="group">
+                    <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <h3 class="group-hover:text-accent mb-1 text-xl font-semibold text-white transition-colors duration-200">
+                            {item.title}
+                        </h3>
+                        <p class="mb-2 text-sm text-gray-400">
+                            {item.role} {item.period && `(${item.period})`}
+                        </p>
+                        <p class="text-gray-300">{item.description}</p>
+                    </a>
+                </div>
+            ))
+        }
+    </div>
+    {
+        viewAllHref && (
+            <a
+                href={viewAllHref}
+                class="text-accent group mt-6 inline-flex items-center gap-1 hover:underline"
+            >
+                {viewAllText}
+                <svg
+                    class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                </svg>
+            </a>
+        )
+    }
+</section>
