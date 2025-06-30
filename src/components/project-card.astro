@@ -1,0 +1,54 @@
+---
+export interface ProjectCardProps {
+    title: string;
+    description: string;
+    role: string;
+    period?: string;
+    achievements: string[];
+    technologies: string[];
+    href: string;
+}
+
+const { title, description, role, period, achievements, technologies, href } =
+    Astro.props as ProjectCardProps;
+---
+
+<div class="group">
+    <a href={href} target="_blank" rel="noopener noreferrer" class="block">
+        <div class="mb-4 flex items-start justify-between">
+            <h2
+                class="group-hover:text-accent text-2xl font-bold text-white transition-colors"
+            >
+                [ {title} ]
+            </h2>
+        </div>
+    </a>
+    <p class="mb-4 text-sm text-gray-400">
+        {role}
+        {period && `( ${period} )`}
+    </p>
+
+    <p class="mb-6 text-gray-300">{description}</p>
+
+    <div class="space-y-6">
+        <div>
+            <h3 class="mb-2 font-semibold text-white">achievements</h3>
+            <ul class="list-inside list-disc space-y-1 text-gray-400">
+                {achievements.map((achievement) => <li>{achievement}</li>)}
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="mb-2 font-semibold text-white">technologies</h3>
+            <div class="flex flex-wrap gap-2">
+                {
+                    technologies.map((tech) => (
+                        <span class="rounded bg-gray-800/50 px-2 py-1 text-sm text-gray-300">
+                            {tech.toLowerCase()}
+                        </span>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>

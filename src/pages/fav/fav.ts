@@ -37,7 +37,8 @@ export const favorites = [
     },
     {
         title: "go / backend tech",
-        description: "Backend tooling I reach for when I want performance and clarity.",
+        description:
+            "Backend tooling I reach for when I want performance and clarity.",
         items: [
             {
                 name: "Go-Chi",

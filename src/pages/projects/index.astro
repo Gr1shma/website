@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/layout.astro";
+import ProjectCard from "../../components/project-card.astro";
+
+import { projects } from "../projects/projects.ts";
+---
+
+<Layout>
+    <h1 class="mb-4 text-4xl font-bold">
+        <span class="text-accent"> ~ </span>
+        <span class="inline-block text-[#ffffff]">projects</span>
+    </h1>
+    <p class="mb-12 leading-relaxed text-gray-400">
+        here&apos;s a handful of projects i&apos;ve built. love crafting tools
+        that make devs&apos; lives smoother and picking up fresh tech on the
+        way.
+    </p>
+
+    <div class="space-y-12">
+        {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
+</Layout>
