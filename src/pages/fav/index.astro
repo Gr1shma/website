@@ -1,0 +1,16 @@
+---
+import Layout from "../../layouts/layout.astro";
+import FavList from "../../components/fav-list.astro";
+
+import { favorites } from "../fav/fav.ts";
+---
+
+<Layout title="Grishma Dhakal - favorites">
+    <h1 class="mb-6 text-xl">favorites</h1>
+
+    {
+        favorites.map(({ title, description, items }) => (
+            <FavList title={title} description={description} items={items} />
+        ))
+    }
+</Layout>

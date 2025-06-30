@@ -1,0 +1,57 @@
+---
+interface FavItem {
+    name: string;
+    url?: string;
+    note?: string;
+}
+
+const { title, description, items } = Astro.props as {
+    title: string;
+    description?: string;
+    items: FavItem[];
+};
+
+const id = title
+    .toLowerCase()
+    .replace(/[\s/]+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+---
+
+<section class="mb-10" id={id}>
+    <h2 class="mb-2 text-lg">
+        <a
+            href={`#${id}`}
+            class="hover:text-accent transition-colors duration-200"
+        >
+            [ {title} ]
+        </a>
+    </h2>
+    {
+        description && (
+            <p class="mb-4 font-mono text-sm text-gray-500 select-text">
+                {description}
+            </p>
+        )
+    }
+    <ul class="ml-5 list-disc space-y-3">
+        {
+            items.map((item) => (
+                <li>
+                    <a
+                        href={item.url}
+                        class="hover:text-accent font-semibold transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        {item.name}
+                    </a>
+                    {item.note && (
+                        <p class="mt-1 ml-2 font-mono text-sm text-gray-400 select-text">
+                            // {item.note}
+                        </p>
+                    )}
+                </li>
+            ))
+        }
+    </ul>
+</section>
