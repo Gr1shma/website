@@ -2,8 +2,9 @@
 import "../style/global.css";
 import Navbar from "../components/navbar.astro";
 import { Font } from "astro:assets";
----
 
+const { title } = Astro.props;
+---
 
 <html
     lang="en"
@@ -14,7 +15,7 @@ import { Font } from "astro:assets";
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Grishma Dhakal</title>
+        <title>{title ?? "Grishma Dhakal"}</title>
     </head>
     <body>
         <Font cssVariable="--font-geist-mono" preload />
