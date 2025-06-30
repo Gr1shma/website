@@ -1,12 +1,18 @@
+---
+import Quote from "../components/quote.astro";
+---
+
 <header class="mb-16 space-y-4">
     <h1 class="mb-4 text-4xl font-bold">
         <span class="text-accent"> ~ </span>
         <span class="inline-block text-[#ffffff]"> Grishma Dhakal</span>
     </h1>
     <div class="text-gray-400">pokhara, nepal</div>
-    <div class="text-gray-400">
-        &quot;When we lose our principles, we invite chaos.&quot; - Mr. Robot
-    </div>
+    <Quote
+        text="When we lose our principles, we invite chaos."
+        author="Mr. Robot"
+    />
+
     <p class="text-lg leading-relaxed">
         i&apos;m a
         <a

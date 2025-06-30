@@ -6,8 +6,14 @@ import { favorites } from "../fav/fav.ts";
 ---
 
 <Layout title="Grishma Dhakal - favorites">
-    <h1 class="mb-6 text-xl">favorites</h1>
-
+    <h1 class="mb-4 text-4xl font-bold">
+        <span class="text-accent"> ~ </span>
+        <span class="inline-block text-[#ffffff]">favorites</span>
+    </h1>
+    <p class="mb-12 leading-relaxed text-gray-400">
+        a curated list of tools, tech, and sites i keep coming back to,
+        battle-tested and beloved.
+    </p>
     {
         favorites.map(({ title, description, items }) => (
             <FavList title={title} description={description} items={items} />

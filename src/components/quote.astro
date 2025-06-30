@@ -1,0 +1,10 @@
+---
+const { text, author } = Astro.props;
+---
+
+<section class="border-accent mb-8 border-l-4 pl-4">
+    <p class="text-md text-gray-400">
+        &quot;{text}&quot;
+    </p>
+    <p class="text-accent mt-2 font-mono text-sm">- {author.toLowerCase()}</p>
+</section>
