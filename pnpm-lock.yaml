@@ -17,9 +17,6 @@ importers:
       astro:
         specifier: ^5.10.1
         version: 5.10.1(@types/node@24.0.7)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.44.1)(typescript@5.8.3)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       rehype-autolink-headings:
         specifier: ^7.1.0
         version: 7.1.0
@@ -42,9 +39,6 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: 0.6.13
         version: 0.6.13(prettier-plugin-astro@0.14.1)(prettier@3.6.2)
-      tailwind-merge:
-        specifier: ^3.3.1
-        version: 3.3.1
 
 packages:
 
@@ -1528,9 +1522,6 @@ packages:
 
   suf-log@2.5.3:
     resolution: {integrity: sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==}
-
-  tailwind-merge@3.3.1:
-    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
 
   tailwindcss@4.1.11:
     resolution: {integrity: sha512-2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==}
@@ -3511,8 +3502,6 @@ snapshots:
   suf-log@2.5.3:
     dependencies:
       s.color: 0.0.15
-
-  tailwind-merge@3.3.1: {}
 
   tailwindcss@4.1.11: {}
 
