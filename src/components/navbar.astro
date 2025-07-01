@@ -7,13 +7,13 @@ const navItems = [
 ];
 ---
 
-<nav class="text-m mb-12 flex items-center justify-between">
-    <div class="flex space-x-4">
+<nav class="text-m mb-12 flex items-start justify-between">
+    <div class="flex flex-wrap gap-2 sm:gap-4">
         {
             navItems.map((item) => (
                 <a
                     href={item.href}
-                    class="hover:text-accent transition-colors duration-200"
+                    class="hover:text-accent transition-colors duration-200 whitespace-nowrap"
                     aria-label={
                         item.label.charAt(0).toUpperCase() + item.label.slice(1)
                     }

@@ -18,6 +18,11 @@ const posts = (await getCollection("posts"))
         <span class="text-accent"> ~ </span>
         <span class="inline-block text-[#ffffff]">blog</span>
     </h1>
+    <p class="mb-12 leading-relaxed text-gray-400">
+        random thoughts, deep dives, and occasional rants. i write when
+        something breaks, excites me, or won’t leave my brain alone.
+    </p>
+
     <div class="space-y-8 pt-4 sm:space-y-4">
         {
             posts.map((post) => (

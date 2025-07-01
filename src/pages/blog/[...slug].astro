@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/layout.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("posts");
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: post,
+    }));
+}
+
+type Props = CollectionEntry<"posts">;
+const post = Astro.props;
+const { Content } = await render(post);
+
+const formatDate = (date: Date): string => {
+    return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    }).toLowerCase();
+};
+
+const formattedDate = formatDate(post.data.date);
+---
+
+<Layout>
+    <h1 class="mb-4 flex text-4xl font-bold">
+        <span class="text-accent flex-shrink-0">~&nbsp;</span>
+        <span class="text-[#ffffff]">{post.data.title}</span>
+    </h1>
+    <div class="mb-8 flex items-center justify-between text-sm text-gray-400">
+        <span>{formattedDate}</span>
+    </div>
+
+    <article
+        class="prose prose-invert prose-headings:text-white prose-a:text-white hover:prose-a:underline max-w-none"
+    >
+        <Content />
+    </article>
+    <div class="mt-6">
+        <a
+            href="/blog"
+            class="hover:text-accent inline-flex items-center text-sm text-gray-400 transition-colors duration-200"
+        >
+            <svg
+                class="mr-2 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to blog
+        </a>
+    </div>
+</Layout>
