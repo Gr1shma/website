@@ -16,17 +16,23 @@ const post = Astro.props;
 const { Content } = await render(post);
 
 const formatDate = (date: Date): string => {
-    return date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    }).toLowerCase();
+    return date
+        .toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        })
+        .toLowerCase();
 };
 
 const formattedDate = formatDate(post.data.date);
 ---
 
-<Layout>
+<Layout
+    title=`${post.data.title}`
+    description=`${post.data.description}`
+    url=`blog/${post.id}`
+>
     <h1 class="mb-4 flex text-4xl font-bold">
         <span class="text-accent flex-shrink-0">~&nbsp;</span>
         <span class="text-[#ffffff]">{post.data.title}</span>

@@ -13,7 +13,11 @@ const posts = (await getCollection("posts"))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="Grishma Dhakal - Blog">
+<Layout
+    title="Blog"
+    description="a mix of technical deep dives, personal rants, and raw thoughts - sparked by bugs, breakthroughs, and brainworms."
+    url="blog"
+>
     <h1 class="mb-4 text-4xl font-bold">
         <span class="text-accent"> ~ </span>
         <span class="inline-block text-[#ffffff]">blog</span>

@@ -40,12 +40,12 @@ body {
 }
 
 .prose a.anchor {
-    @apply relative no-underline text-[#ffffff] text-2xl;
+    @apply relative text-2xl text-[#ffffff] no-underline;
 }
 
 .prose a.anchor::before {
     content: "#";
-    @apply absolute -left-4 opacity-0 transition-opacity duration-200 text-[#ffffff];
+    @apply absolute -left-4 text-[#ffffff] opacity-0 transition-opacity duration-200;
 }
 
 .prose a.anchor:hover::before {
@@ -71,11 +71,11 @@ body {
 }
 
 .prose pre {
-    @apply overflow-x-auto border border-neutral-800 bg-[#111] my-4 rounded-none;
+    @apply my-4 overflow-x-auto rounded-none border border-neutral-800 bg-[#111];
 }
 
 .prose code:not(pre code) {
-    @apply px-1 py-0.5 text-sm border border-gray-700 rounded text-gray-200;
+    @apply rounded border border-gray-700 px-1 py-0.5 text-sm text-gray-200;
 }
 
 .prose code:not(pre code)::before,
@@ -84,7 +84,7 @@ body {
 }
 
 .prose pre code {
-    @apply p-4 block bg-transparent;
+    @apply block bg-transparent p-4;
     border: initial;
     line-height: 1.6;
 }

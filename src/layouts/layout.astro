@@ -2,15 +2,61 @@
 import "../style/global.css";
 import Navbar from "../components/navbar.astro";
 import { Font } from "astro:assets";
-const { title } = Astro.props;
+
+const {
+    title,
+    description,
+    image,
+    url,
+    type = "website",
+    author = "Grishma Dhakal",
+} = Astro.props;
+
+const defaultTitle = "Grishma Dhakal";
+const defaultDescription =
+    "Computer engineering student blending software and hardware. Passionate about building, language design, gaming, and the terminal lifestyle.";
+const defaultImage = "/twitter.png";
+const defaultUrl = "https://grishmadhakal.com";
+
+const siteTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
+const siteDescription = description || defaultDescription;
+const siteImage = image || defaultImage;
+const siteUrl = url ? `${defaultUrl}/${url}` : defaultUrl;
 ---
 
 <html lang="en" style="view-transition-name:root">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title ?? "Grishma Dhakal"}</title>
+
+        <title>{siteTitle}</title>
+        <link rel="preload" as="image" href={siteImage} />
+        <meta name="title" content={siteTitle} />
+        <meta name="description" content={siteDescription} />
+        <meta name="image" content={siteImage} />
+        <meta name="author" content={author} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={siteUrl} />
+
+        <meta property="og:type" content={type} />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={siteDescription} />
+        <meta property="og:image" content={siteImage} />
+        <meta property="og:image:alt" content={siteDescription} />
+        <meta property="og:site_name" content={defaultTitle} />
+        <meta property="og:locale" content="en_US" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={siteUrl} />
+        <meta property="twitter:title" content={siteTitle} />
+        <meta property="twitter:description" content={siteDescription} />
+        <meta property="twitter:image" content={siteImage} />
+        <meta property="twitter:image:alt" content={siteDescription} />
+
+        <meta name="theme-color" content="#000000" />
+        <meta name="msapplication-TileColor" content="#000000" />
     </head>
     <body>
         <Font cssVariable="--font-geist-mono" preload />

@@ -26,11 +26,14 @@ export default defineConfig({
                 {
                     behavior: "wrap",
                     properties: {
-                        className: ["anchor"]
-                    }
-                }
+                        className: ["anchor"],
+                    },
+                },
             ],
-            [rehypeExternalLinks, { target: "_blank", rel: ["noopener", "noreferrer"] }],
+            [
+                rehypeExternalLinks,
+                { target: "_blank", rel: ["noopener", "noreferrer"] },
+            ],
         ],
         syntaxHighlight: "shiki",
         shikiConfig: { theme: "catppuccin-mocha" },
