@@ -7,6 +7,8 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
     experimental: {
@@ -18,6 +20,7 @@ export default defineConfig({
             },
         ],
     },
+
     markdown: {
         rehypePlugins: [
             rehypeSlug,
@@ -38,7 +41,11 @@ export default defineConfig({
         syntaxHighlight: "shiki",
         shikiConfig: { theme: "catppuccin-mocha" },
     },
+
     vite: {
         plugins: [tailwindcss()],
     },
+
+    integrations: [mdx()],
 });
+

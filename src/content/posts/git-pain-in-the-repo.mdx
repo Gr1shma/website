@@ -1,0 +1,110 @@
+---
+title: "Git: Pain in the Repo"
+date: "Sep 30, 2025"
+---
+import { Image } from 'astro:assets';
+
+Git is a ubiquitous tool in modern software development.
+It was created by Linus Torvalds specifically for the development of the Linux kernel, designed to resolve his issues with existing version control systems.
+
+But its suitability for every use case is debatable.
+For many developers and smaller-scale projects, the complexity of Git can be an unnecessary obstacle.
+It is not always the optimal choice for every person and situation, especially where AI agents increasingly write and manage code.
+
+Git's widespread success is deeply connected to the rise of **git[hub]**.
+The platform globalized the tool by adding a social and collaborative layer, which was arguably the primary driver for its mass adoption.
+
+This has created a central paradox.
+Git was designed as a decentralized system, yet it is now overwhelmingly used through centralized platforms (git[hub]).
+As a result, using git via a service like git[hub] has become a mandatory standard for participation in most open-source projects.
+
+---
+
+## UX Problems
+
+Git exposes too much of its internals. Everyday use feels like wrestling with the system rather than working through it.
+
+* Branches, merges, and rebases are hard to visualize without external tools
+* Merge conflicts block all work until fully resolved
+* Developers juggle multiple strategies: `merge`, `rebase`, `squash`
+* Commands like `git stash` or `git reset --hard` are treated as normal
+
+```bash
+# Commit? Stash? Nah.
+git reset --hard
+```
+
+---
+
+## Dependent PRs
+
+Git makes it awkward to handle pull requests that depend on each other.
+
+* Developers often have to stack branches and rebase repeatedly
+* There’s no built-in way to link related PRs
+
+So you end up bouncing between two extremes:
+
+* messy chains of commits, or
+* heavyweight full PRs for every little change.
+
+---
+
+## Deeper Flaws
+
+Git often forces developers to adapt to its model rather than the other way around.
+
+* No smooth middle ground between private experiments and team reviews -> many developers rely on `WIP`(work in progress) commits or temporary branches
+* Histories get cluttered: most open-source repos have a lot of “noise” commits, like `fix typo` or broken work
+* Scaling mismatch:
+
+  * Solo projects: Git is often overkill; simpler versioning could work
+  * Large repos: performance can slow down with very big repos or many binary files
+
+---
+
+## Merge vs Rebase
+
+Two “solutions,” neither ideal.
+
+* Merge keeps history intact but quickly makes it unreadable
+* Rebase creates cleaner history but risks rewriting or losing work
+
+---
+
+## Possible Solutions
+
+1. **Middle ground between commits and PRs**
+
+    * Lightweight “in-progress” changes that can be shared without creating full pull requests
+    * There should be a lightweight layer between code changes, commits, and pull requests
+    * Example: **JJ**, where conflicts become commits and can be resolved later
+
+<Image
+    src="https://8g9pnnpjfx.ufs.sh/f/cYPCAZXPGneE8P9rd27wQ9k10ThMav6ErxXfgZzYHBjWnute"
+    alt="Illustration of commit, code, and pull request workflow"
+    className="block mx-auto rounded-xl"
+    width="700"
+    height="500"
+/>
+
+
+2. **AI-friendly workflows**
+
+   * Allow AI-generated commits or code suggestions without disturbing normal developer workflow
+   * Example: **DeltaBD**, database-driven version control that can handle AI experiments
+   * Supports rapid iteration while keeping history clean
+
+3. **Scalable and simple patterns**
+
+   * Works for both small projects and large repos
+   * Easy to manage, avoids history clutter, and handles binaries efficiently
+   * Other approaches: superposition or multi-version models where changes coexist until merged
+
+---
+
+Git is powerful but often forces developers to adapt to its model.
+Its complexity, messy histories, and scaling quirks can frustrate both small and large projects.
+
+Centralized platforms like git[hub] made Git ubiquitous, but also introduced workflow friction.
+Conflicts, stacked PRs, and the merge vs rebase dilemma show that version control still has room to evolve.
