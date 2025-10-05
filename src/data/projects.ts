@@ -64,4 +64,21 @@ export const projects = [
         technologies: ["go", "chi", "sqlc", "goose", "postgresql", "docker"],
         href: "https://github.com/Gr1shma/go-rrsag",
     },
+    {
+        title: "notgit",
+        description:
+            "a minimal reimplementation of git in go to explore and understand the internals of version control systems.",
+        role: "creator",
+        period: "2025 jul - oct",
+        achievements: [
+            "rebuilt core git features like init, add, commit, branch, and log using go",
+            "implemented blob, tree, and commit objects with full serialization and deserialization support",
+            "built a custom index system to track staged files and manage commits",
+            "used cobra for a structured cli interface with subcommands and flags",
+            "wrote comprehensive tests using testify/require for reliability and correctness",
+            "focused on clarity, transparency, and educational value over production complexity",
+        ],
+        technologies: ["go", "cobra", "testify", "sha1", "file i/o"],
+        href: "https://github.com/Gr1shma/notgit",
+    },
 ];
