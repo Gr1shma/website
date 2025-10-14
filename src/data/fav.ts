@@ -6,7 +6,7 @@ export const favorites = [
             {
                 name: "Next.js",
                 url: "https://nextjs.org",
-                note: "React’s power tool — SSR, static, and fullstack in one.",
+                note: "React’s power tool - SSR, static, and fullstack in one.",
             },
             {
                 name: "tRPC",
@@ -36,9 +36,9 @@ export const favorites = [
         ],
     },
     {
-        title: "go / backend tech",
+        title: "go / backend & cli tools",
         description:
-            "Backend tooling I reach for when I want performance and clarity.",
+            "Core libraries and tools I rely on for building performant backends, robust CLIs, and reliable tests in Go.",
         items: [
             {
                 name: "Go-Chi",
@@ -48,7 +48,7 @@ export const favorites = [
             {
                 name: "gorilla/websocket",
                 url: "https://github.com/gorilla/websocket",
-                note: "The go-to WebSocket lib for Go — solid, battle-tested, no surprises.",
+                note: "The go-to WebSocket lib for Go - solid, battle-tested, no surprises.",
             },
             {
                 name: "sqlc",
@@ -60,6 +60,16 @@ export const favorites = [
                 url: "https://github.com/pressly/goose",
                 note: "Simple, reliable DB migrations. Keeps your schema in check.",
             },
+            {
+                name: "spf13/cobra",
+                url: "https://github.com/spf13/cobra",
+                note: "A structured framework for CLI applications. Manages commands, flags, and help output efficiently, allowing focus on core logic.",
+            },
+            {
+                name: "stretchr/testify",
+                url: "https://github.com/stretchr/testify",
+                note: "A comprehensive testing toolkit. The `require` package ensures immediate failure on assertion errors, promoting test reliability and clarity.",
+            },
         ],
     },
     {
@@ -69,12 +79,12 @@ export const favorites = [
             {
                 name: "nexxel.dev",
                 url: "https://nexxel.dev",
-                note: "My portfolio’s UI? Yeah, this is basically a love letter — massively inspired, almost copied. No shame.",
+                note: "My portfolio’s UI? Yeah, this is basically a love letter - massively inspired, almost copied. No shame.",
             },
             {
                 name: "t3.gg",
                 url: "https://t3.gg",
-                note: "Theo’s creation — the fullstack starter kit that just clicks. All the good stuff, zero fluff.",
+                note: "Theo’s creation - the fullstack starter kit that just clicks. All the good stuff, zero fluff.",
             },
             {
                 name: "lukesmith.xyz",
@@ -89,7 +99,7 @@ export const favorites = [
             {
                 name: "ironchad.dev",
                 url: "https://ironchad.dev",
-                note: "Frontend beast mode — clean code, sharp design, zero fluff.",
+                note: "Frontend beast mode - clean code, sharp design, zero fluff.",
             },
             {
                 name: "leerob.io",
@@ -115,7 +125,7 @@ export const favorites = [
             {
                 name: "htop",
                 url: "https://htop.dev",
-                note: "The ‘top’ command on steroids — process watching made easy and colorful.",
+                note: "The ‘top’ command on steroids - process watching made easy and colorful.",
             },
             {
                 name: "lazygit",
@@ -125,7 +135,7 @@ export const favorites = [
             {
                 name: "jq",
                 url: "https://stedolan.github.io/jq/",
-                note: "JSON ninja tool — slice, filter, and transform your data right in the terminal.",
+                note: "JSON ninja tool - slice, filter, and transform your data right in the terminal.",
             },
             {
                 name: "curl",
@@ -141,7 +151,7 @@ export const favorites = [
             {
                 name: "Neovim",
                 url: "https://neovim.io",
-                note: "The Vim revival — modern, extensible, and blazing fast editor for pros.",
+                note: "The Vim revival - modern, extensible, and blazing fast editor for pros.",
             },
             {
                 name: "tmux",
@@ -151,7 +161,7 @@ export const favorites = [
             {
                 name: "foot",
                 url: "https://codeberg.org/dnkl/foot",
-                note: "Minimal GPU-accelerated terminal — fast, clean, no nonsense.",
+                note: "Minimal GPU-accelerated terminal - fast, clean, no nonsense.",
             },
             {
                 name: "lf",
@@ -171,7 +181,7 @@ export const favorites = [
             {
                 name: "mpd",
                 url: "https://www.musicpd.org",
-                note: "Music player daemon — play your tunes headlessly, forever.",
+                note: "Music player daemon - play your tunes headlessly, forever.",
             },
             {
                 name: "ncmpcpp",
@@ -207,7 +217,7 @@ export const favorites = [
             {
                 name: "AVGVSTVS96/react-shiki",
                 url: "https://github.com/AVGVSTVS96/react-shiki",
-                note: "Syntax highlighting done right — React hook powered by Shiki, no fluff.",
+                note: "Syntax highlighting done right - React hook powered by Shiki, no fluff.",
             },
         ],
     },
@@ -228,7 +238,7 @@ export const favorites = [
             {
                 name: "Sekiro: Shadows Die Twice",
                 url: "https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice/",
-                note: "No blocking, no hiding — just parry or perish. A rage-inducing masterpiece.",
+                note: "No blocking, no hiding - just parry or perish. A rage-inducing masterpiece.",
             },
             {
                 name: "The Last of Us Part I",
@@ -258,7 +268,7 @@ export const favorites = [
             {
                 name: "Uncharted: Legacy of Thieves Collection",
                 url: "https://store.steampowered.com/app/1659420/UNCHARTED_Legacy_of_Thieves_Collection/",
-                note: "climbing, chaos, and cinematic chases. drake never misses — this is linear done right.",
+                note: "climbing, chaos, and cinematic chases. drake never misses - this is linear done right.",
             },
             {
                 name: "Clash of Clans",
