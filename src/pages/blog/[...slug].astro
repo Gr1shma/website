@@ -49,19 +49,22 @@ const formattedDate = formatDate(post.data.date);
     <div class="mt-6">
         <a
             href="/blog"
-            class="hover:text-accent inline-flex items-center text-sm text-gray-400 transition-colors duration-200"
+            class="group inline-flex items-center gap-2 border border-transparent px-4 py-2 text-sm text-gray-400 transition-colors hover:border-neutral-800 hover:text-white"
         >
             <svg
-                class="mr-2 h-4 w-4"
+                class="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
             >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 19l-7-7 7-7"></path>
+                <path d="M19 12H5" />
+                <path d="m12 19-7-7 7-7" />
             </svg>
             Back to blog
         </a>

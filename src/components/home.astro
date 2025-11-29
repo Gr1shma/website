@@ -2,6 +2,12 @@
 import Header from "../components/header.astro";
 import SectionList from "../components/section-list.astro";
 import LinkSection from "./link-section.astro";
+import BlogList from "./blog-list.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("posts"))
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .slice(0, 5);
 
 const projectItems = [
     {
@@ -19,7 +25,7 @@ const projectItems = [
         href: "https://github.com/Gr1shma/tube-and-fuss",
     },
     {
-        title: "go-rssag",
+        title: "go-rrsag",
         role: "creator",
         description:
             "a lightweight rss aggregator in go with user accounts, feed follows, and a background scraper.",
@@ -29,17 +35,18 @@ const projectItems = [
         title: "notgit",
         role: "creator",
         description:
-            "a minimal reimplementation of git in go — built to understand how version control systems work under the hood.",
+            "a minimal reimplementation of git in go - built to understand how version control systems work under the hood.",
         href: "https://github.com/Gr1shma/notgit",
     },
 ];
 ---
 
 <Header />
+<LinkSection />
 <SectionList
     title="projects"
     items={projectItems}
     viewAllHref="/projects"
     viewAllText="all projects"
 />
-<LinkSection />
+<BlogList posts={posts} />

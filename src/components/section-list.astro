@@ -23,22 +23,44 @@ const { title, items, viewAllHref, viewAllText } =
         <span class="text-accent mr-2">*</span>
         {title}
     </h2>
-    <div class="space-y-8">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {
             items.map((item) => (
-                <div class="group">
+                <div class="group relative">
                     <a
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="block h-full border border-neutral-800 bg-neutral-900/20 p-4 transition-all duration-300 hover:border-accent hover:bg-neutral-900/50"
                     >
-                        <h3 class="group-hover:text-accent mb-1 text-xl font-semibold text-white transition-colors duration-200">
-                            {item.title}
-                        </h3>
-                        <p class="mb-2 text-sm text-gray-400">
-                            {item.role} {item.period && `(${item.period})`}
+                        <div class="mb-2 flex items-start justify-between">
+                            <h3 class="text-lg font-semibold text-white transition-colors duration-200 group-hover:text-accent">
+                                {item.title}
+                            </h3>
+                            {item.href.startsWith("http") && (
+                                <svg
+                                    class="h-4 w-4 text-neutral-500 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M7 7h10v10" />
+                                    <path d="M7 17 17 7" />
+                                </svg>
+                            )}
+                        </div>
+                        <p class="mb-3 text-xs font-medium uppercase tracking-wider text-neutral-500">
+                            {item.role} {item.period && <> &mdash; {item.period}</>}
                         </p>
-                        <p class="text-gray-300">{item.description}</p>
+                        <p class="text-sm leading-relaxed text-gray-400">
+                            {item.description}
+                        </p>
                     </a>
                 </div>
             ))
@@ -46,27 +68,29 @@ const { title, items, viewAllHref, viewAllText } =
     </div>
     {
         viewAllHref && (
-            <a
-                href={viewAllHref}
-                class="text-accent group mt-6 inline-flex items-center gap-1 hover:underline"
-            >
-                {viewAllText}
-                <svg
-                    class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+            <div class="mt-6 flex justify-end">
+                <a
+                    href={viewAllHref}
+                    class="group inline-flex items-center gap-2 border border-transparent px-4 py-2 text-sm text-gray-400 transition-colors hover:border-neutral-800 hover:text-white"
                 >
-                    <path d="M7 7h10v10" />
-                    <path d="M7 17 17 7" />
-                </svg>
-            </a>
+                    {viewAllText}
+                    <svg
+                        class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
         )
     }
 </section>

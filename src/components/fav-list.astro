@@ -17,39 +17,42 @@ const id = title
     .replace(/[^a-z0-9-]/g, "");
 ---
 
-<section class="mb-10" id={id}>
-    <h2 class="mb-2 text-lg">
+<section class="mb-8 border border-neutral-800 bg-neutral-900/20 p-6 transition-all duration-300 hover:border-accent hover:bg-neutral-900/50" id={id}>
+    <h2 class="mb-4 text-xl font-bold text-white">
         <a
             href={`#${id}`}
             class="hover:text-accent transition-colors duration-200"
         >
-            [ {title} ]
+            {title}
         </a>
     </h2>
     {
         description && (
-            <p class="mb-4 font-mono text-sm text-gray-500 select-text">
+            <p class="mb-6 text-sm text-gray-400">
                 {description}
             </p>
         )
     }
-    <ul class="ml-5 list-disc space-y-3">
+    <ul class="space-y-3">
         {
             items.map((item) => (
-                <li>
-                    <a
-                        href={item.url}
-                        class="hover:text-accent font-semibold transition-colors duration-200"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        {item.name}
-                    </a>
-                    {item.note && (
-                        <p class="mt-1 ml-2 font-mono text-sm text-gray-400 select-text">
-                            // {item.note}
-                        </p>
-                    )}
+                <li class="flex items-start">
+                    <span class="mr-3 mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-600"></span>
+                    <div>
+                        <a
+                            href={item.url}
+                            class="hover:text-accent font-semibold text-gray-200 transition-colors duration-200"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            {item.name}
+                        </a>
+                        {item.note && (
+                            <span class="ml-2 text-sm text-gray-500">
+                                // {item.note}
+                            </span>
+                        )}
+                    </div>
                 </li>
             ))
         }

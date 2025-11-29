@@ -12,28 +12,40 @@ export interface Props {
 const { posts } = Astro.props;
 ---
 
-<div class="space-y-8 pt-4 sm:space-y-4">
-    {
-        posts.map((post) => (
-            <div class="group flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-                <a
-                    href={`/blog/${post.slug}`}
-                    class="hover:text-accent text-gray-200 transition-colors duration-200"
-                >
-                    {post.data.title.toLowerCase()}
-                </a>
-                <div class="flex shrink-0 items-center text-sm text-gray-400">
-                    <span>
-                        {new Date(post.data.date)
-                            .toLocaleDateString("en-US", {
-                                month: "short",
-                                day: "numeric",
-                                year: "numeric",
-                            })
-                            .toLowerCase()}
-                    </span>
+<section class="mb-16">
+    <div class="mb-6 flex items-center justify-between">
+        <h2 class="flex items-center text-2xl font-bold text-white">
+            <span class="text-accent mr-2">*</span>
+            blogs
+        </h2>
+        <a href="/blog" class="text-sm text-gray-400 hover:text-white transition-colors">
+            view all
+        </a>
+    </div>
+
+    <div class="space-y-4">
+        {
+            posts.map((post) => (
+                <div class="group flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <a
+                        href={`/blog/${post.slug}`}
+                        class="font-semibold text-gray-200 transition-colors duration-200 hover:text-accent"
+                    >
+                        {post.data.title.toLowerCase()}
+                    </a>
+                    <div class="flex shrink-0 items-center text-sm text-gray-500">
+                        <span>
+                            {new Date(post.data.date)
+                                .toLocaleDateString("en-US", {
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                })
+                                .toLowerCase()}
+                        </span>
+                    </div>
                 </div>
-            </div>
-        ))
-    }
-</div>
+            ))
+        }
+    </div>
+</section>
