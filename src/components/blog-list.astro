@@ -18,7 +18,10 @@ const { posts } = Astro.props;
             <span class="text-accent mr-2">*</span>
             blogs
         </h2>
-        <a href="/blog" class="text-sm text-gray-400 hover:text-white transition-colors">
+        <a
+            href="/blog"
+            class="text-sm text-gray-400 transition-colors hover:text-white"
+        >
             view all
         </a>
     </div>
@@ -29,7 +32,7 @@ const { posts } = Astro.props;
                 <div class="group flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                     <a
                         href={`/blog/${post.slug}`}
-                        class="font-semibold text-gray-200 transition-colors duration-200 hover:text-accent"
+                        class="hover:text-accent font-semibold text-gray-200 transition-colors duration-200"
                     >
                         {post.data.title.toLowerCase()}
                     </a>

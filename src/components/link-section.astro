@@ -16,7 +16,7 @@ const links = [
             links.map((link) => (
                 <a
                     href={link.href}
-                    class="group flex items-center gap-2 border border-neutral-800 bg-neutral-900/20 px-4 py-2 text-gray-400 transition-all duration-300 hover:border-accent hover:bg-neutral-900/50 hover:text-white"
+                    class="group hover:border-accent flex items-center gap-2 border border-neutral-800 bg-neutral-900/20 px-4 py-2 text-gray-400 transition-all duration-300 hover:bg-neutral-900/50 hover:text-white"
                     rel={
                         link.href.startsWith("http")
                             ? "noopener noreferrer"
@@ -27,7 +27,7 @@ const links = [
                     <span class="font-medium">{link.title}</span>
                     {link.href.startsWith("http") && (
                         <svg
-                            class="h-3 w-3 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                            class="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"

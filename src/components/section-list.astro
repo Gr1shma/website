@@ -31,15 +31,15 @@ const { title, items, viewAllHref, viewAllText } =
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="block h-full border border-neutral-800 bg-neutral-900/20 p-4 transition-all duration-300 hover:border-accent hover:bg-neutral-900/50"
+                        class="hover:border-accent block h-full border border-neutral-800 bg-neutral-900/20 p-4 transition-all duration-300 hover:bg-neutral-900/50"
                     >
                         <div class="mb-2 flex items-start justify-between">
-                            <h3 class="text-lg font-semibold text-white transition-colors duration-200 group-hover:text-accent">
+                            <h3 class="group-hover:text-accent text-lg font-semibold text-white transition-colors duration-200">
                                 {item.title}
                             </h3>
                             {item.href.startsWith("http") && (
                                 <svg
-                                    class="h-4 w-4 text-neutral-500 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-accent"
+                                    class="group-hover:text-accent h-4 w-4 text-neutral-500 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
                                     height="24"
@@ -55,8 +55,9 @@ const { title, items, viewAllHref, viewAllText } =
                                 </svg>
                             )}
                         </div>
-                        <p class="mb-3 text-xs font-medium uppercase tracking-wider text-neutral-500">
-                            {item.role} {item.period && <> &mdash; {item.period}</>}
+                        <p class="mb-3 text-xs font-medium tracking-wider text-neutral-500 uppercase">
+                            {item.role}{" "}
+                            {item.period && <> &mdash; {item.period}</>}
                         </p>
                         <p class="text-sm leading-relaxed text-gray-400">
                             {item.description}
