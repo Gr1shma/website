@@ -1,7 +1,7 @@
 ---
 export interface Props {
     posts: {
-        slug: string;
+        id: string;
         data: {
             title: string;
             date: Date;
@@ -31,7 +31,7 @@ const { posts } = Astro.props;
             posts.map((post) => (
                 <div class="group flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                     <a
-                        href={`/blog/${post.slug}`}
+                        href={`/blog/${post.id}`}
                         class="hover:text-accent font-semibold text-gray-200 transition-colors duration-200"
                     >
                         {post.data.title.toLowerCase()}
