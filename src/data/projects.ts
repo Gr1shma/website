@@ -1,15 +1,67 @@
 export const projects = [
     {
+        title: "rawhttp",
+        description:
+            "A lightweight HTTP parser and server built in Rust. It follows RFC-9112 to understand TCP networking and protocol parsing.",
+        role: "creator",
+        period: "2025 Nov",
+        achievements: [
+            "Mastered HTTP/1.1 syntax and semantics by strictly implementing RFC 9112 specifications.",
+            "Gained deep understanding of TCP connection lifecycles and raw byte stream manipulation.",
+            "Learned thread-safe state management patterns using Rust's ownership model and Arc primitives.",
+            "Explored robust error handling and type-driven development with Result/Option types.",
+        ],
+        technologies: [
+            "rust",
+            "tcp networking",
+            "http protocol",
+            "anyhow",
+            "thiserror",
+            "std::net",
+        ],
+        href: "https://github.com/Gr1shma/rawhttp",
+    },
+    {
+        title: "notgit",
+        description:
+            "A minimal reimplementation of Git in Go. Built to understand how version control systems work under the hood.",
+        role: "creator",
+        period: "2025 Jul - Oct",
+        achievements: [
+            "Understood storage mechanisms, what git uses to store data.",
+            "Learned the internal structure of Git objects (blobs, trees, commits) and D.",
+            "Explored binary data serialization and low-level file system interactions in Go.",
+            "Mastered CLI application architecture and command-line parsing logic.",
+        ],
+        technologies: ["go", "cobra", "testify", "sha1", "file i/o"],
+        href: "https://github.com/Gr1shma/notgit",
+    },
+    {
+        title: "go-rrsag",
+        description:
+            "A lightweight RSS aggregator with full API and scraping support, built in Go.",
+        role: "creator",
+        period: "2025 Jun",
+        achievements: [
+            "Mastered Go concurrency patterns using Goroutines and Channels for parallel data scraping.",
+            "Learned type-safe SQL interaction and code generation workflows with SQLC.",
+            "Explored RESTful API design principles and middleware implementation in Go.",
+            "Learned basic containerization concepts for isolating the application.",
+        ],
+        technologies: ["go", "chi", "sqlc", "goose", "postgresql", "docker"],
+        href: "https://github.com/Gr1shma/go-rrsag",
+    },
+    {
         title: "g7-chat",
         description:
-            "fast, minimalist ai chat interface built for power users who value ownership, efficiency, and full control over their conversations.",
+            "A fast, minimalist AI chat interface built with full-stack Next.js.",
         role: "creator",
-        period: "2025 feb - may",
+        period: "2025 Feb - May",
         achievements: [
-            "built a distraction-free interface to interact with ai assistants with full thread visibility and management",
-            "optimized thread management using smart local state and react query for snappy, lightweight performance",
-            "designed for privacy, performance, and developer experience with custom distraction-free styling",
-            "integrated seamless ai model streaming using vercel ai sdk",
+            "Built thread management with branching and CRUD capabilities.",
+            "Implemented AI integration allowing users to bring their own API keys.",
+            "Designed a polished UI for user and also AI customization.",
+            "Used tRPC to ensure end-to-end type safety across the stack.",
         ],
         technologies: [
             "typescript",
@@ -28,15 +80,14 @@ export const projects = [
     {
         title: "tube-and-fuss",
         description:
-            "a backend system combining features of youtube and twitter to support video uploads, tweets with social interaction functionalities.",
+            "A backend system built in Express.js, combining features of YouTube and Twitter.",
         role: "creator",
-        period: "2024 nov",
+        period: "2024 Nov",
         achievements: [
-            "built secure jwt auth with bcrypt for password encryption",
-            "designed scalable mongodb schema for videos, tweets, users, and interactions",
-            "implemented api routes for full crud and social features (likes, comments, subscriptions)",
-            "handled file uploads and processing for images and videos",
-            "wrote robust validation and error handling for all endpoints",
+            "Built a REST API using JWT middleware for stateless authentication.",
+            "Designed a modular architecture separating routes, controllers, and services for maintainability.",
+            "Implemented MongoDB aggregation pipelines for efficient pagination and relational data fetching.",
+            "Mastered API error handling patterns and input validation pipelines.",
         ],
         technologies: [
             "javascript",
@@ -47,62 +98,5 @@ export const projects = [
             "bcrypt",
         ],
         href: "https://github.com/Gr1shma/tube-and-fuss",
-    },
-    {
-        title: "rawhttp",
-        description:
-            "a simple, lightweight http server implementation in rust, built from scratch to understand the fundamentals of tcp networking and http protocol parsing.",
-        role: "creator",
-        period: "2025 nov",
-        achievements: [
-            "built a tcp listener to accept connections and handle raw byte streams",
-            "implemented manual http request parsing (method, path, headers, body) without external http libraries",
-            "designed a modular handler trait to decouple server infrastructure from application logic",
-            "added multi-threaded connection handling using arc for shared state",
-            "created custom query parsing and body handling modules",
-            "wrote comprehensive tests and shell scripts for endpoint verification",
-        ],
-        technologies: [
-            "rust",
-            "tcp networking",
-            "http protocol",
-            "anyhow",
-            "thiserror",
-            "std::net",
-        ],
-        href: "https://github.com/Gr1shma/rawhttp",
-    },
-    {
-        title: "notgit",
-        description:
-            "a minimal reimplementation of git in go to explore and understand the internals of version control systems.",
-        role: "creator",
-        period: "2025 jul - oct",
-        achievements: [
-            "rebuilt core git features like init, add, commit, branch, and log using go",
-            "implemented blob, tree, and commit objects with full serialization and deserialization support",
-            "built a custom index system to track staged files and manage commits",
-            "used cobra for a structured cli interface with subcommands and flags",
-            "wrote comprehensive tests using testify/require for reliability and correctness",
-            "focused on clarity, transparency, and educational value over production complexity",
-        ],
-        technologies: ["go", "cobra", "testify", "sha1", "file i/o"],
-        href: "https://github.com/Gr1shma/notgit",
-    },
-    {
-        title: "go-rrsag",
-        description:
-            "a lightweight rss aggregator with full api and scraping support, built in go.",
-        role: "creator",
-        period: "2025 jun",
-        achievements: [
-            "built a clean, modular rest api using chi router and jwt-based auth",
-            "implemented background scraping with goroutines to keep feeds fresh",
-            "used sqlc to generate type-safe go code from raw sql queries",
-            "managed schema and migrations using goose",
-            "dockerized the stack with postgres and environment config for local dev",
-        ],
-        technologies: ["go", "chi", "sqlc", "goose", "postgresql", "docker"],
-        href: "https://github.com/Gr1shma/go-rrsag",
     },
 ];

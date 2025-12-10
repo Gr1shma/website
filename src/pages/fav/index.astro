@@ -7,7 +7,7 @@ import { favorites } from "../../data/fav.ts";
 
 <Layout
     title="Fav"
-    description="my go-to tools, tech, and sites - curated, battle-tested, and bookmarked for a reason."
+    description="List of my favorite tools, sites and games"
     url="fav"
 >
     <h1 class="mb-4 text-4xl font-bold">
@@ -15,8 +15,7 @@ import { favorites } from "../../data/fav.ts";
         <span class="inline-block text-[#ffffff]">favorites</span>
     </h1>
     <p class="mb-12 leading-relaxed text-gray-400">
-        a curated list of tools, tech, and sites i keep coming back to,
-        battle-tested and beloved.
+        List of my favorite tools, sites and games.
     </p>
     {
         favorites.map(({ title, description, items }) => (

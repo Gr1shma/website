@@ -15,18 +15,13 @@ const posts = (await getCollection("posts"))
 
 <Layout
     title="Blog"
-    description="a mix of technical deep dives, personal rants, and raw thoughts - sparked by bugs, breakthroughs, and brainworms."
+    description="Thoughts and notes on the things I learned"
     url="blog"
 >
     <h1 class="mb-4 text-4xl font-bold">
         <span class="text-accent"> ~ </span>
         <span class="inline-block text-[#ffffff]">blog</span>
     </h1>
-    <p class="mb-12 leading-relaxed text-gray-400">
-        random thoughts, deep dives, and occasional rants. i write when
-        something breaks, excites me, or won’t leave my brain alone.
-    </p>
-
     <div class="space-y-8 pt-4 sm:space-y-4">
         {
             posts.map((post) => (
