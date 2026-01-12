@@ -39,7 +39,7 @@ export default defineConfig({
             ],
         ],
         syntaxHighlight: "shiki",
-        shikiConfig: { theme: "catppuccin-mocha" },
+        shikiConfig: { theme: "gruvbox-dark-hard" },
     },
 
     vite: {
