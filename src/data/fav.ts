@@ -181,9 +181,9 @@ export const favorites = [
             },
             {
                 name: "OpenTUI",
-                url: "https://github.com/sst/opentui",
+                url: "https://github.com/anomalyco/opentui",
                 note: "Library for building terminal user interfaces.",
-            }
+            },
         ],
     },
     {

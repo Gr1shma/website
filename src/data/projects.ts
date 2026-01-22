@@ -37,7 +37,7 @@ export const projects = [
         href: "https://github.com/Gr1shma/notgit",
     },
     {
-        title: "go-rrsag",
+        title: "go-rssag",
         description:
             "A lightweight RSS aggregator with full API and scraping support, built in Go.",
         role: "creator",
@@ -49,7 +49,7 @@ export const projects = [
             "Learned basic containerization concepts for isolating the application.",
         ],
         technologies: ["go", "chi", "sqlc", "goose", "postgresql", "docker"],
-        href: "https://github.com/Gr1shma/go-rrsag",
+        href: "https://github.com/Gr1shma/go-rssag",
     },
     {
         title: "g7-chat",
