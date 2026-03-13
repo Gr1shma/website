@@ -1,14 +1,12 @@
 ---
 import Layout from "../../layouts/layout.astro";
 import { getCollection } from "astro:content";
+import { getSlugFromFilePath } from "../../utils/slug";
 
 const posts = (await getCollection("posts"))
     .map((post) => ({
         ...post,
-        slug: post
-            .filePath!.split("/")
-            .pop()!
-            .replace(/\.mdx?$/, ""),
+        slug: getSlugFromFilePath(post.filePath!),
     }))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---

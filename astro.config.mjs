@@ -9,8 +9,12 @@ import rehypeExternalLinks from "rehype-external-links";
 
 import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
 export default defineConfig({
+    site: "https://grishmadhakal.com",
+    prefetch: {
+        prefetchAll: true,
+        defaultStrategy: "hover"
+    },
     experimental: {
         fonts: [
             {
