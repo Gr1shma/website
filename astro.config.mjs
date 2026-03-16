@@ -8,12 +8,13 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
 
 import mdx from "@astrojs/mdx";
+import { SITE_URL } from "./src/consts";
 
 export default defineConfig({
-    site: "https://grishmadhakal.com",
+    site: SITE_URL,
     prefetch: {
         prefetchAll: true,
-        defaultStrategy: "hover"
+        defaultStrategy: "hover",
     },
     experimental: {
         fonts: [

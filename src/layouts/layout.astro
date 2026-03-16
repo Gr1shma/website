@@ -3,6 +3,7 @@ import "../style/global.css";
 import Navbar from "../components/navbar.astro";
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL, SITE_AUTHOR, SITE_IMAGE } from "../consts";
 
 const {
     title,
@@ -10,19 +11,13 @@ const {
     image,
     url,
     type = "website",
-    author = "Grishma Dhakal",
+    author = SITE_AUTHOR,
 } = Astro.props;
 
-const defaultTitle = "Grishma Dhakal";
-const defaultDescription =
-    "Computer engineering student blending software and hardware. Passionate about building, language design, gaming, and the terminal lifestyle.";
-const defaultImage = "/twitter.png";
-const defaultUrl = "https://grishmadhakal.com";
-
-const siteTitle = title ? `${title} | ${defaultTitle}` : defaultTitle;
-const siteDescription = description || defaultDescription;
-const siteImage = image || defaultImage;
-const siteUrl = url ? `${defaultUrl}/${url}` : defaultUrl;
+const siteTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
+const siteDescription = description || SITE_DESCRIPTION;
+const siteImage = image || SITE_IMAGE;
+const siteUrl = url ? `${SITE_URL}/${url}` : SITE_URL;
 ---
 
 <html lang="en" style="view-transition-name:root">
@@ -40,7 +35,7 @@ const siteUrl = url ? `${defaultUrl}/${url}` : defaultUrl;
         <meta name="author" content={author} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={siteUrl} />
-        <link rel="alternate" type="application/rss+xml" title={defaultTitle} href={new URL("rss.xml", Astro.site)} />
+        <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL("rss.xml", Astro.site)} />
 
         <meta property="og:type" content={type} />
         <meta property="og:url" content={siteUrl} />
@@ -48,7 +43,7 @@ const siteUrl = url ? `${defaultUrl}/${url}` : defaultUrl;
         <meta property="og:description" content={siteDescription} />
         <meta property="og:image" content={siteImage} />
         <meta property="og:image:alt" content={siteDescription} />
-        <meta property="og:site_name" content={defaultTitle} />
+        <meta property="og:site_name" content={SITE_TITLE} />
         <meta property="og:locale" content="en_US" />
 
         <meta property="twitter:card" content="summary_large_image" />
