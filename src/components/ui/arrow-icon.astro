@@ -1,0 +1,29 @@
+---
+interface Props {
+    direction?: "left" | "right";
+    class?: string;
+}
+
+const { direction = "right", class: className } = Astro.props;
+
+const paths = {
+    left: { line: "M19 12H5", head: "m12 19-7-7 7-7" },
+    right: { line: "M5 12h14", head: "m12 5 7 7-7 7" },
+};
+---
+
+<svg
+    class:list={["h-4 w-4 transition-transform duration-200", className]}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+>
+    <path d={paths[direction].line}></path>
+    <path d={paths[direction].head}></path>
+</svg>

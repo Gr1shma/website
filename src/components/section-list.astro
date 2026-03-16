@@ -1,4 +1,9 @@
 ---
+import SectionHeading from "./ui/section-heading.astro";
+import Button from "./ui/button.astro";
+import ExternalLinkIcon from "./ui/external-link-icon.astro";
+import ArrowIcon from "./ui/arrow-icon.astro";
+
 interface Item {
     title: string;
     href: string;
@@ -19,10 +24,7 @@ const { title, items, viewAllHref, viewAllText } =
 ---
 
 <section class="animate-fade-in-up mb-16">
-    <h2 class="mb-6 flex items-center text-2xl font-bold text-white">
-        <span class="text-accent mr-2">*</span>
-        {title}
-    </h2>
+    <SectionHeading title={title} class="mb-6" />
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {
             items.map((item) => (
@@ -31,28 +33,14 @@ const { title, items, viewAllHref, viewAllText } =
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="hover:border-accent block h-full border border-neutral-800 bg-neutral-900/20 p-4 transition-all duration-300 hover:bg-neutral-900/50"
+                        class="hover:border-accent block h-full border border-neutral-800 bg-neutral-900/20 p-4 transition-[border-color,background-color] duration-300 hover:bg-neutral-900/50"
                     >
                         <div class="mb-2 flex items-start justify-between">
                             <h3 class="group-hover:text-accent text-lg font-semibold text-white transition-colors duration-200">
                                 {item.title}
                             </h3>
                             {item.href.startsWith("http") && (
-                                <svg
-                                    class="group-hover:text-accent h-4 w-4 text-neutral-500 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path d="M7 7h10v10" />
-                                    <path d="M7 17 17 7" />
-                                </svg>
+                                <ExternalLinkIcon class="group-hover:text-accent h-4 w-4 text-neutral-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
                             )}
                         </div>
                         <p class="mb-3 text-xs font-medium tracking-wider text-neutral-500 uppercase">
@@ -70,27 +58,13 @@ const { title, items, viewAllHref, viewAllText } =
     {
         viewAllHref && (
             <div class="mt-6 flex justify-end">
-                <a
-                    href={viewAllHref}
-                    class="group inline-flex items-center gap-2 border border-transparent px-4 py-2 text-sm text-gray-400 transition-colors hover:border-neutral-800 hover:text-white"
-                >
+                <Button variant="ghost" href={viewAllHref}>
                     {viewAllText}
-                    <svg
-                        class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                    </svg>
-                </a>
+                    <ArrowIcon
+                        direction="right"
+                        class="group-hover:translate-x-1"
+                    />
+                </Button>
             </div>
         )
     }

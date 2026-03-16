@@ -1,4 +1,6 @@
 ---
+import ExternalLinkIcon from "./ui/external-link-icon.astro";
+
 export interface ProjectCardProps {
     title: string;
     description: string;
@@ -14,7 +16,7 @@ const { title, description, role, period, achievements, technologies, href } =
 ---
 
 <div
-    class="group hover:border-accent relative h-full border border-neutral-800 bg-neutral-900/20 p-6 transition-all duration-300 hover:bg-neutral-900/50"
+    class="group hover:border-accent relative h-full border border-neutral-800 bg-neutral-900/20 p-6 transition-[border-color,background-color] duration-300 hover:bg-neutral-900/50"
 >
     <a href={href} target="_blank" rel="noopener noreferrer" class="block">
         <div class="mb-4 flex items-start justify-between">
@@ -23,21 +25,9 @@ const { title, description, role, period, achievements, technologies, href } =
             >
                 {title}
             </h2>
-            <svg
-                class="group-hover:text-accent h-6 w-6 text-neutral-500 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            >
-                <path d="M7 7h10v10"></path>
-                <path d="M7 17 17 7"></path>
-            </svg>
+            <ExternalLinkIcon
+                class="group-hover:text-accent h-6 w-6 text-neutral-500 group-hover:translate-x-1 group-hover:-translate-y-1"
+            />
         </div>
     </a>
     <p

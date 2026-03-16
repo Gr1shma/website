@@ -32,7 +32,7 @@ const posts = (await getCollection("posts"))
                     </a>
                     <div class="flex shrink-0 items-center text-sm text-gray-400">
                         <span>
-                            {new Date(post.data.date)
+                            {post.data.date
                                 .toLocaleDateString("en-US", {
                                     month: "short",
                                     day: "numeric",

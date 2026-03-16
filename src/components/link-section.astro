@@ -1,4 +1,8 @@
 ---
+import SectionHeading from "./ui/section-heading.astro";
+import Button from "./ui/button.astro";
+import ExternalLinkIcon from "./ui/external-link-icon.astro";
+
 const links = [
     { title: "resume", href: "resume.pdf" },
     { title: "email", href: "mailto:me@grishmadhakal.com.np" },
@@ -9,15 +13,13 @@ const links = [
 ---
 
 <section class="animate-fade-in-up mb-16">
-    <h2 class="mb-6 flex items-center text-2xl font-bold text-white">
-        <span class="text-accent mr-2">*</span> links
-    </h2>
+    <SectionHeading title="links" class="mb-6" />
     <div class="flex flex-wrap gap-4 text-sm">
         {
             links.map((link) => (
-                <a
+                <Button
+                    variant="outline"
                     href={link.href}
-                    class="group hover:border-accent flex items-center gap-2 border border-neutral-800 bg-neutral-900/20 px-4 py-2 text-gray-400 transition-all duration-300 hover:bg-neutral-900/50 hover:text-white"
                     rel={
                         link.href.startsWith("http")
                             ? "noopener noreferrer"
@@ -27,23 +29,9 @@ const links = [
                 >
                     <span class="font-medium">{link.title}</span>
                     {link.href.startsWith("http") && (
-                        <svg
-                            class="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path d="M7 7h10v10" />
-                            <path d="M7 17 17 7" />
-                        </svg>
+                        <ExternalLinkIcon class="h-3 w-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     )}
-                </a>
+                </Button>
             ))
         }
     </div>

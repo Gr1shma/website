@@ -1,0 +1,21 @@
+---
+interface Props {
+    variant?: "ghost" | "outline" | "link";
+    href?: string;
+    class?: string;
+    [key: string]: any;
+}
+
+const { variant = "ghost", class: className, ...rest } = Astro.props;
+
+const variants: Record<string, string> = {
+    ghost: "group inline-flex items-center gap-2 border border-transparent px-4 py-2 text-sm text-gray-400 transition-colors hover:border-neutral-800 hover:text-white",
+    outline:
+        "group inline-flex items-center gap-2 border border-neutral-800 bg-neutral-900/20 px-4 py-2 text-gray-400 transition-[border-color,background-color,color] duration-300 hover:border-accent hover:bg-neutral-900/50 hover:text-white",
+    link: "text-sm text-gray-400 transition-colors hover:text-white",
+};
+---
+
+<a class:list={[variants[variant], className]} {...rest}>
+    <slot />
+</a>
