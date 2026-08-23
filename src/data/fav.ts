@@ -18,6 +18,43 @@ export const favorites = [
                 url: "https://zod.dev",
                 note: "Runtime validation that fits TypeScript perfectly.",
             },
+            {
+                name: "Svelte",
+                url: "https://svelte.dev",
+                note: "Compiler-based framework that ships less JS to the browser.",
+            },
+        ],
+    },
+    {
+        title: "Rust libs & tools",
+        description:
+            "Libraries and tools I use when building backends, CLIs, or systems projects in Rust.",
+        items: [
+            {
+                name: "clap",
+                url: "https://github.com/clap-rs/clap",
+                note: "Derive-based command line argument parser.",
+            },
+            {
+                name: "axum",
+                url: "https://github.com/tokio-rs/axum",
+                note: "Ergonomic web framework built on tokio and hyper.",
+            },
+            {
+                name: "ratatui",
+                url: "https://ratatui.rs",
+                note: "Library for building rich terminal user interfaces.",
+            },
+            {
+                name: "thiserror",
+                url: "https://github.com/dtolnay/thiserror",
+                note: "Derive macro for ergonomic custom error types.",
+            },
+            {
+                name: "anyhow",
+                url: "https://github.com/dtolnay/anyhow",
+                note: "Flexible, easy error handling for applications.",
+            },
         ],
     },
     {

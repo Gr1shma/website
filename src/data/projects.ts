@@ -1,5 +1,59 @@
 export const projects = [
     {
+        title: "voidend",
+        description:
+            "A local-first, offline REST API simulation and mock data generation tool, enabling schema-driven endpoint configuration without external services.",
+        role: "creator and maintainer",
+        period: "2026 Jul - Aug",
+        achievements: [
+            "Designed a schema-driven endpoint configuration system with realistic fake data generation using Faker.js.",
+            "Implemented network simulation (latency, failure rate) and auth simulation with project-scoped JWT signing/verification.",
+            "Built a schema-aware code generator producing copyable fetch components for the component template gallery.",
+            "Wrote unit and integration tests for tRPC routers and filesystem/database behavior.",
+        ],
+        technologies: [
+            "typescript",
+            "next.js",
+            "trpc",
+            "drizzle orm",
+            "sqlite",
+            "faker.js",
+            "zod",
+            "tailwind css",
+            "shadcn/ui",
+            "vitest",
+        ],
+        href: "https://github.com/Gr1shma/voidend",
+    },
+    {
+        title: "shikshya",
+        description:
+            "A comprehensive monolithic web application for academic institutions, combining course management and AI-powered assistance into a unified platform.",
+        role: "creator and maintainer",
+        period: "2026 Feb",
+        achievements: [
+            "Architected a role-based access control system with strict typing for Admin, Teacher, and Student permissions.",
+            "Implemented a RAG pipeline using the Google Gemini API for context-aware, source-based explanations of course materials.",
+            "Built an interactive study workspace with a resizable split-pane layout combining PDF rendering and streaming AI chat.",
+            "Achieved full-stack type safety through tRPC and shared Zod schemas, leveraging RSC and TanStack Query for performance.",
+        ],
+        technologies: [
+            "typescript",
+            "next.js",
+            "react",
+            "trpc",
+            "drizzle orm",
+            "postgresql",
+            "better auth",
+            "tailwind css",
+            "shadcn/ui",
+            "vercel ai sdk",
+            "google gemini",
+            "uploadthing",
+        ],
+        href: "https://github.com/Gr1shma/shikshya",
+    },
+    {
         title: "rawhttp",
         description:
             "A lightweight HTTP parser and server built in Rust. It follows RFC-9112 to understand TCP networking and protocol parsing.",
