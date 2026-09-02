@@ -75,7 +75,10 @@ body {
 }
 
 .prose code:not(pre code) {
-    @apply rounded border border-gray-700 px-1 py-0.5 text-sm text-gray-200;
+    @apply rounded px-1.5 py-0.5 text-sm font-medium;
+    background-color: #1d2021;
+    color: #fe8019;
+    border: 1px solid #3c3836;
 }
 
 .prose code:not(pre code)::before,

@@ -1,7 +1,5 @@
 ---
 import Layout from "../../layouts/layout.astro";
-import Button from "../../components/ui/button.astro";
-import ArrowIcon from "../../components/ui/arrow-icon.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 import { render } from "astro:content";
 
@@ -48,10 +46,27 @@ const formattedDate = formatDate(post.data.date);
     >
         <Content />
     </article>
-    <div class="mt-6">
-        <Button variant="ghost" href="/blog">
-            <ArrowIcon direction="left" class="group-hover:-translate-x-1" />
-            Back to blog
-        </Button>
+    <div class="mt-16 mb-16 inline-flex items-center gap-1">
+        <a
+            href="/blog"
+            class="decoration-accent/40 hover:bg-accent/25 px-1 font-bold underline decoration-1 underline-offset-4 transition-colors"
+        >
+            cd <span class="text-accent">~</span>
+        </a>
+        <span class="cursor-blink">█</span>
     </div>
 </Layout>
+<style>
+    .cursor-blink {
+        animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+</style>
