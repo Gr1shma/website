@@ -1,0 +1,76 @@
+---
+title: "Time to Rethink"
+date: "2026-09-02"
+---
+import { Image } from 'astro:assets';
+import codeDepthImage from '../../assets/blogs/code-depth.png';
+
+
+## the stack is lying to us
+
+Every system we use today is built for a human who designs, builds, and ships software carefully, one step at a time.
+
+git, ci/cd, the filesystem, all of it built before the ai-agent. now the agent writes the code, deploys it, maintains it, but the tools underneath where designed thinking a human is doing all.
+
+## life after cloud
+
+You can start small and scale up. No need to hire highly specialized senior developers just to begin.
+
+## life before claude (not cloud)
+
+Building software was capital-intensive. You had to predict whether a feature was worth building before you could ship it. Experimentation on feature was expensive.
+
+## everything we believe is no longer true
+
+You don't need deep expertise to build things anymore.
+
+You don't need to know CLI tools or iOS development to ship an app. You just need an idea and an agentic tool. The result may be a bit rustic, but it works, and you're free to customize it as you go.
+
+the amount of expertise required to build has genuinely changed. PewDiePie is a good example, a YouTuber with no real coding background spent months on a home GPU rig and built [Odysseus](https://odysseusai.dev/), a self-hosted AI workspace that went on to pull in hundreds of contributors.
+
+## some rant about git
+
+Why can't `.env` files be committed safely? Why can't branches stay hidden by default?
+
+Rebuilding git is a serious undertaking. I tried to rebuild a minimal version myself, to understand how it works: [notgit](https://github.com/Gr1shma/notgit).
+
+Zed is taking a real swing at this with [DeltaDB](https://zed.dev/blog/introducing-deltadb). instead of saving your work only at each commit, it saves every small edit along the way, and ties each one back to the AI chat that caused it.
+
+## about file systems
+
+why can't a file live in two folders at once? don't tell me about symlinks, chain few of them together and tracing where a file actually points becomes a headache. one link moves or gets deleted, then whole chain breaks silently.
+
+
+the real issue is the tree itself: every file gets exactly one parent, so anything that belongs to two places forces you to pick one or duplicate it. Solution no one really knows, maybe tags, but that would just be extra on top of the current system, so that's not an exact solution either.
+
+
+## why does codebase still matter?
+
+Depth isn't the problem if you architect software well. Going too deep on every layer is what destroys you.
+
+If a software only needs basic features, basic is enough. building complex features you don't even need makes the codebase and its architecture harder to understand, for no real reason.
+
+<Image
+    src={codeDepthImage}
+    alt="Illustration of commit, code, and pull request workflow"
+    className="block mx-auto rounded-xl"
+    width="400"
+/>
+
+[grc](https://github.com/gr1shma/grc) does one thing simply. Add more complex features, and it grows vertically far quicker than expected.
+
+## deployment issues, mainly ci/cd pipelines
+
+Shipping a feature currently takes 30 minutes to build, and up to an hour waiting on remote ci/cd. Modern compute is fast enough that this should run locally instead.
+
+Deployment should be a single CLI command an agent can run. Something like `npx ship deploy`, it deploys or it fails and prints to stderr
+
+## what i'm not saying
+
+is that you don't need any knowledge at all. That's not what i meant. You need some basic knowledge and concept to build the thing, the idea alone doesn't do all the work. But that basic level is enough to get started, and now you can learn as you build, since deep knowledge isn't necessary if all you want is something simple.
+
+If you want to learn something deep and take it seriously, ai won't help much there. It only helps you get started on the basics.
+
+## the opportunity
+
+We can build something that replaces this system, made for agentic work instead of human work. and even if we don't build the perfect version, it's not wasted. someone else can take it, brainstorm off it, and that's how the ideal system eventually gets built.

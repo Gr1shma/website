@@ -1,6 +1,6 @@
 ---
 title: "hello there"
-date: "July 1, 2025"
+date: "2025-07-01"
 ---
 
 hello there.
